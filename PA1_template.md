@@ -65,7 +65,7 @@ ggplot(Total_Steps, aes(x = steps)) +
 
     ## Warning: Removed 8 rows containing non-finite values (stat_bin).
 
-![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/unnamed-chunk-1.png)
+![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/figure/unnamed-chunk-1.png)
 
 1.  Calculate and report the mean and median of the total number of steps taken per day
 
@@ -144,7 +144,7 @@ Total_Steps[, .(Mean_Steps = mean(steps), Median_Steps = median(steps))]
 ggplot(Total_Steps, aes(x = steps)) + geom_histogram(fill = "blue", binwidth = 1000) + labs(title = "Daily Steps", x = "Steps", y = "Frequency")
 ```
 
-![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/unnamed-chunk-3.png)
+![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/figure/unnamed-chunk-3.png)
 
 | Type of Estimate                       | Mean\_Steps | Median\_Steps |
 |----------------------------------------|-------------|---------------|
@@ -187,4 +187,4 @@ IntervalDT <- activityDT[, c(lapply(.SD, mean, na.rm = TRUE)), .SDcols = c("step
 ggplot(IntervalDT , aes(x = interval , y = steps, color=`weekday or weekend`)) + geom_line() + labs(title = "Avg. Daily Steps by Weektype", x = "Interval", y = "No. of Steps") + facet_wrap(~`weekday or weekend` , ncol = 1, nrow=2)
 ```
 
-![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/unnamed-chunk-4.png)
+![](https://github.com/smeah25/RepData_PeerAssessment1/blob/master/figure/unnamed-chunk-4.png)
